@@ -1,0 +1,21 @@
+<p>checkout page works!</p>
+<div class="container">
+  <div class="box">
+    <div class="task-info"></div>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <div class="input-box">
+        <label for="username">Nom complet</label>
+        <input type="text" id="username" formControlName="rN" placeholder="nom complet">
+      </div>
+      <div class="input-box">
+        <label for="email">Adresse Mail</label>
+        <input type="email" id="email" formControlName="rE" placeholder="adresse mail">
+      </div>
+      <div class="input-box">
+        <label for="phoneNumber">Téléphone</label>
+        <input type="text" id="phoneNumber" formControlName="rT" placeholder="téléphone (OM / MOMO)">
+      </div>
+      <button type="submit">Valider Paiement | {{ price | currency : '2-1-1' : 'XAF' }}</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,116 @@
+<app-navbar />
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+      <div class="logo">
+        <img src="assets/images/icons/logo.webp" alt="coursio-africa-logo" width="50" height="50">
+        <h3>COURSIO AFRICA</h3>
+      </div>
+      <h1 class="title">
+        L'assistance digitale pour toutes vos démarches,
+        formalités et courses professionnelles et personnelles en Afrique subsaharienne.
+      </h1>
+      <h3 class="subtitle">
+        Effectuer vos démarches, formalités et courses pour réduire vos déplacements:
+      </h3>
+      <ul>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g data-name="Layer 2">
+              <g data-name="checkmark-circle">
+                <rect width="24" height="24" opacity="0"/>
+                <path d="M9.71 11.29a1 1 0 0 0-1.42 1.42l3 3A1 1 0 0 0 12 16a1 1 0 0 0 .72-.34l7-8a1 1 0 0 0-1.5-1.32L12 13.54z"/>
+                <path d="M21 11a1 1 0 0 0-1 1 8 8 0 0 1-8 8A8 8 0 0 1 6.33 6.36 7.93 7.93 0 0 1 12 4a8.79 8.79 0 0 1 1.9.22 1 1 0 1 0 .47-1.94A10.54 10.54 0 0 0 12 2a10 10 0 0 0-7 17.09A9.93 9.93 0 0 0 12 22a10 10 0 0 0 10-10 1 1 0 0 0-1-1z"/>
+              </g>
+            </g>
+          </svg>
+          <span>Professionnelles</span>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g data-name="Layer 2">
+              <g data-name="checkmark-circle">
+                <rect width="24" height="24" opacity="0"/>
+                <path d="M9.71 11.29a1 1 0 0 0-1.42 1.42l3 3A1 1 0 0 0 12 16a1 1 0 0 0 .72-.34l7-8a1 1 0 0 0-1.5-1.32L12 13.54z"/>
+                <path d="M21 11a1 1 0 0 0-1 1 8 8 0 0 1-8 8A8 8 0 0 1 6.33 6.36 7.93 7.93 0 0 1 12 4a8.79 8.79 0 0 1 1.9.22 1 1 0 1 0 .47-1.94A10.54 10.54 0 0 0 12 2a10 10 0 0 0-7 17.09A9.93 9.93 0 0 0 12 22a10 10 0 0 0 10-10 1 1 0 0 0-1-1z"/>
+              </g>
+            </g>
+          </svg>
+          <span>Personnelles</span>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g data-name="Layer 2">
+              <g data-name="checkmark-circle">
+                <rect width="24" height="24" opacity="0"/>
+                <path d="M9.71 11.29a1 1 0 0 0-1.42 1.42l3 3A1 1 0 0 0 12 16a1 1 0 0 0 .72-.34l7-8a1 1 0 0 0-1.5-1.32L12 13.54z"/>
+                <path d="M21 11a1 1 0 0 0-1 1 8 8 0 0 1-8 8A8 8 0 0 1 6.33 6.36 7.93 7.93 0 0 1 12 4a8.79 8.79 0 0 1 1.9.22 1 1 0 1 0 .47-1.94A10.54 10.54 0 0 0 12 2a10 10 0 0 0-7 17.09A9.93 9.93 0 0 0 12 22a10 10 0 0 0 10-10 1 1 0 0 0-1-1z"/>
+              </g>
+            </g>
+          </svg>
+          <span>Autres</span>
+        </li>
+      </ul>
+      <p>Est notre métier</p>
+      <a routerLink="/about">En savoir plus</a>
+    </div>
+    <div class="col-2">
+      <img src="assets/images/icons/image-1.webp">
+    </div>
+  </div>
+</div>
+
+@defer () {
+  <section class="services">
+    <h1 class="title">De quoi avez besoin ?</h1>
+    <span>Nos services</span>
+    <div class="services-list">
+      <div class="service" routerLink="/task/form">
+        <img src="assets/images/Professional.webp" alt="service-professionnel" width="350">
+        <p>Besoin d'un service Professionnel ?</p>
+      </div>
+      <div class="service" routerLink="/task/form">
+        <img src="assets/images/Personal.webp" alt="service-personnel" width="200">
+        <p>Besoin d'un service Personnel ?</p>
+      </div>
+      <div class="service" routerLink="/task/form">
+        <img src="assets/images/Autres.webp" alt="autre-service" width="270">
+        <p>Besoin d'un Autre service ?</p>
+      </div>
+    </div>
+    <div *ngIf="user$ | async as user">
+      @if (!user) {
+        <div class="buttons">
+          <button class="signup-btn" routerLink="/signup">S'inscrire</button>
+          <button class="login-btn" routerLink="/login">Se Connecter</button>
+        </div>
+      }
+    </div>
+  </section>
+}
+
+@defer() {
+  <section class="activities">
+    <h1 class="title">Démarrer vos activités</h1>
+    <span>rejoigner nous</span>
+    <div class="activity-list">
+      <div class="card card-1">
+        <div class="card-info">
+          <h3>Client</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium debitis sunt quidem laudantium, suscipit libero eius eum pariatur illum qui aliquam iure nesciunt quisquam excepturi obcaecati? Ex architecto mollitia dolorem?</p>
+          <button>Démarrer vos activités</button>
+        </div>
+      </div>
+      <div class="card card-2">
+        <div class="card-info">
+          <h3>Paternaire</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolorum at inventore ad eaque distinctio? Maxime inventore animi illo voluptatum? Numquam, iusto quaerat. Dolore totam laudantium impedit odio dignissimos assumenda.</p>
+          <button routerLink="/partner">Rejoigner nous</button>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+
+
+<app-footer />

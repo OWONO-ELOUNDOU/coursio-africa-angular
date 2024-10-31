@@ -1,0 +1,176 @@
+$spacing: 20px;
+
+$white-color: #ffffff;
+$blue-color: #0463cb;
+$light-blue-color: #eaf4ff;
+
+@mixin subtitle {
+    font-size: 23px;
+    font-weight: 600;
+    color: $blue-color;
+}
+@mixin boxes {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: $spacing - 10px;
+}
+@mixin input-box {
+    width: clamp(200px, 100%, 350px);
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: $spacing - 13px;
+}
+@mixin input {
+    width: 100%;
+    padding-left: $spacing - 10px;
+    height: $spacing * 2;
+    outline: none;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+}
+
+.container {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .header {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 25px;
+
+        h3 {
+            font-size: 25px;
+            color: $blue-color;
+        }
+    }
+
+    .signup-box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        form {
+            width: clamp(250px, 100%, 800px);
+            height: 100%;
+            padding: $spacing;
+            border: 1px solid #efefef;
+            border-radius: 10px;
+
+            .personal-info {
+                margin-bottom: $spacing;
+                padding-bottom: $spacing;
+                border-bottom: 1px solid #efefef;
+
+                h3 {
+                    @include subtitle();
+                    margin-bottom: $spacing;
+                    position: relative;
+                }
+                h3::after {
+                    content: '';
+                    width: 70px;
+                    height: 3px;
+                    background-color: $blue-color;
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                }
+
+                .boxes {
+                    @include boxes();
+
+                    .input-box {
+                        @include input-box();
+                        label {
+                            font-size: 13px;
+                        }
+                        input {
+                            @include input();
+                        }
+                    }
+                }
+            }
+
+            .location-info {
+                margin-bottom: $spacing;
+                padding-bottom: $spacing;
+                border-bottom: 1px solid #efefef;
+
+                h3 {
+                    @include subtitle();
+                    margin-bottom: $spacing;
+                    position: relative;
+                }
+                
+                h3::after {
+                    content: '';
+                    width: 70px;
+                    height: 3px;
+                    background-color: $blue-color;
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                }
+
+                .boxes {
+                    @include boxes();
+
+                    .input-box {
+                        @include input-box();
+
+                        label {
+                            font-size: 13px;
+                        }
+
+                        input {
+                            @include input();
+                        }
+                    }
+                }
+            }
+
+            .cta-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: $spacing;
+
+                button {
+                    width: clamp(200px, 100%, 300px);
+                    padding: 10px 0;
+                    font-size: 13px;
+                    font-weight: 600;
+                    color: $white-color;
+                    background-color: $blue-color;
+                    border: none;
+                    outline: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                p {
+                    font-size: 13px;
+
+                    span {
+                        font-weight: 500;
+                        color: $blue-color;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

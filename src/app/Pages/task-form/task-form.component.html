@@ -1,0 +1,65 @@
+<div class="task-container">
+    <h1>Formulaire de demande de service</h1>
+    <form action="" class="task-form">
+        <div class="task-box">
+            <h3>Information sur le service</h3>
+            <div class="boxes">
+                <div class="input-box">
+                    <label for="type">Type de service</label>
+                    <select id="type">
+                        <option>-- selection du service</option>
+                        @for (t of typeSelection; track t.name) {
+                            <option>{{ t.name }}</option>
+                        }
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="type">Qualité du service</label>
+                    <select id="type">
+                        <option>-- Qualité --</option>
+                        @for (q of qualitiesSelection; track q.name) {
+                            <option>{{ q.name }}</option>
+                        }
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="type">Objet du service</label>
+                    <select id="type">
+                        <option>-- Objet --</option>
+                        @for (o of objectSelection; track o.name) {
+                            <option>{{ o.name }}</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="task-box">
+            <h3>Localisation</h3>
+            <div class="boxes">
+                <div class="input-box">
+                    <label for="">Nature juridique de la structure à voir</label>
+                    <input type="text" id="" placeholder="Administration publique, Ets public, Sté publique, Sté privée commerciale, Organisation civile, Association, Personne privée individuelle, Autre">
+                </div>
+                <div class="input-box">
+                    <label for="">Service à voir</label>
+                    <input type="text" id="" placeholder="nom de la structure, adresse, direction, service, porte, personne ou responsable à rencontrer, Téléphone">
+                </div>
+                <div class="input-box">
+                    <label for="">Localisation / adresse</label>
+                    <input type="text" id="" placeholder="région, département, ville, rue ou autre précision détaillée">
+                </div>
+            </div>
+        </div>
+        <div class="task-box">
+            <h3>Détails du service</h3>
+            <div class="details-box">
+                <label for="">Description</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="buttons">
+            <button routerLink="/home">Annuler</button>
+            <button type="submit" class="save-btn">Continuer</button>
+        </div>
+    </form>
+</div>

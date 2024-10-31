@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="login-box">
+        <div class="logo-box">
+            <img src="assets/images/icons/logo.webp" width="30" height="30" alt="coursio-africa-log">
+            <h3>COURSIO AFRICA</h3>
+        </div>
+        <form class="form-box" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <h3 class="subtitle">Connexion</h3>
+            <div class="input-box">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" placeholder="email address">
+            </div>
+            <div class="input-box">
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password" placeholder="password">
+            </div>
+            <button type="submit" [disabled]="!this.loginForm.valid">Connexion</button>
+            <p>pas encore membre ? <span routerLink="/signup">inscription</span></p>
+        </form>
+    </div>
+</div>

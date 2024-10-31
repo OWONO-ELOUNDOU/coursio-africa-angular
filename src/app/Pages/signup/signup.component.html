@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="signup-box">
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="personal-info">
+                <h3>Informations Utitlisateur</h3>
+                <div class="boxes">
+                    <div class="input-box">
+                        <label for="firstName">Nom</label>
+                        <input type="text" id="firstName" formControlName="firstName" placeholder="nom">
+                    </div>
+                    <div class="input-box">
+                        <label for="lastName">Prénom</label>
+                        <input type="text" id="lastName" formControlName="lastName" placeholder="prénom">
+                    </div>
+                    <div class="input-box">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" formControlName="email" placeholder="adresse mail">
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" formControlName="password" placeholder="mot de passe">
+                    </div>
+                    <div class="input-box">
+                        <label for="phoneNumber">Téléphone</label>
+                        <input type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="téléphone">
+                    </div>
+                </div>
+            </div>
+            <div class="location-info">
+                <h3>Adresse</h3>
+                <div class="boxes">
+                    <div class="input-box">
+                        <label for="street">Quartier</label>
+                        <input type="text" id="street" formControlName="street" placeholder="quartier">
+                    </div>
+                    <div class="input-box">
+                        <label for="twon">Ville</label>
+                        <input type="text" id="twon" formControlName="twon" placeholder="ville">
+                    </div>
+                    <div class="input-box">
+                        <label for="region">Région</label>
+                        <input type="email" id="region" formControlName="region" placeholder="region">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-btn">
+                <button type="submit" [disabled]="!this.signupForm.valid">Inscription</button>
+                <p>Déja inscrit ? <span routerLink="/login">connexion</span></p>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,252 @@
+@mixin container {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin section {
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@mixin svg-width {
+  width: 20px;
+  height: 20px;
+}
+
+@mixin button {
+  width: clamp(150px, 100%, 200px);
+  font-weight: 600;
+  padding: 10px 0;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+$white-color: #ffffff;
+$blue-color: #0463cb;
+$light-blue-color: #eaf4ff;
+$light-blue-gradient-color: #eaf4ffe3;
+$margin-bottom: 25px;
+
+.container {
+  @include container;
+  padding: 0 5% 5% 5%;
+
+  .row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .col-1 {
+      width: clamp(400px, 100%, 600px);
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 15px;
+        margin-bottom: $margin-bottom;
+
+        h3 {
+          color: $blue-color;
+        }
+      }
+
+      h1 {
+        font-size: 25px;
+        font-weight: bold;
+        text-wrap: balance;
+        margin-bottom: $margin-bottom;
+      }
+
+      h3.subtitle {
+        font-size: 15px;
+        color: #777;
+        margin-bottom: $margin-bottom;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: $margin-bottom;
+
+
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 10px;
+
+          svg {
+            @include svg-width;
+          }
+
+          p {
+            color: #000;
+          }
+        }
+      }
+
+      p {
+        font-size: 15px;
+        color: #777;
+        margin-bottom: $margin-bottom;
+      }
+
+      a {
+        text-decoration: none;
+        padding: 10px 25px;
+        border-radius: 30px;
+        color: #ffffff;
+        background-color: $blue-color;
+      }
+    }
+
+    .col-2 {
+      width: clamp(300px, 100%, 500px);
+      border-radius: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.services {
+  @include container();
+  @include section();
+
+  h1.title {
+    font-size: 2.5vw;
+  }
+
+  .services-list {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+
+    .service {
+      width: clamp(300px, 100%, 400px);
+      padding: 20px;
+      border: 1px solid #efefef;
+      border-radius: 10px;
+      transition: all 0.3s ease-in;
+      cursor: pointer;
+
+      img {
+        margin-bottom: $margin-bottom;
+      }
+
+      p {
+        font-weight: 600;
+      }
+    }
+
+    .service:hover {
+      border: 3px solid $blue-color;
+    }
+  }
+
+  .buttons {
+    width: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    .signup-btn {
+      @include button();
+      background-color: $light-blue-color;
+    }
+
+    .login-btn {
+      @include button();
+      color: #ffffff;
+      background-color: $blue-color;
+    }
+  }
+}
+
+.activities {
+  @include container();
+  @include section();
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: $light-blue-gradient-color;
+
+  h1.title {
+    font-size: 2.5vw;
+  }
+
+  .activity-list {
+    width: 100%;
+    display: grid;
+    place-items: center;
+
+    .card {
+      width: clamp(300px, 100%, 700px);
+      aspect-ratio: 5/3;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 20px;
+      border-radius: 10px;
+
+      .card-info {
+        h3 {
+          color: $blue-color;
+          margin-bottom: $margin-bottom - 10px;
+        }
+
+        p {
+          font-size: 13px;
+          font-weight: 500;
+          text-wrap: balance;
+          margin-bottom: $margin-bottom - 10px;
+        }
+
+        button {
+          width: clamp(200px, 100%, 350px);
+          padding: 10px 0;
+          font-weight: 600;
+          border: none;
+          outline: none;
+          border-radius: 7px;
+          color: $white-color;
+          background-color: $blue-color;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .card:not(:last-child) {
+      margin-bottom: $margin-bottom + 10px;
+    }
+
+    .card-1 {
+      background: linear-gradient(to bottom, transparent, $white-color), url('../../../../public/assets/images/backgrounds/Easy_Asker.jpg') center no-repeat;
+      background-size: cover;
+    }
+
+    .card-2 {
+      background: linear-gradient(to bottom, transparent, $white-color), url('../../../../public/assets/images/backgrounds/Partner.jpeg') center no-repeat;
+      background-size: cover;
+    }
+  }
+}

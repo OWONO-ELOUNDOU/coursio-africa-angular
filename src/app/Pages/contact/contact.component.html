@@ -1,0 +1,28 @@
+<app-navbar />
+<div class="container">
+    <h1>Nous Contacter</h1>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="boxes">
+            <div class="input-box">
+                <label for="username">Nom et Prénom</label>
+                <input type="text" id="username" formControlName="username" placeholder="username">
+            </div>
+            <div class="input-box">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" placeholder="adresse mail">
+            </div>
+            <div class="input-box">
+                <label for="object">Objet</label>
+                <input type="text" id="object" formControlName="object" placeholder="objet">
+            </div>
+        </div>
+        <div class="boxes">
+            <div class="message-box">
+                <label for="content">Message</label>
+                <textarea name="" id="content" formControlName="content" rows="10" placeholder="content"></textarea>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!contactForm.valid">envoyer</button>
+    </form>
+</div>
+<app-footer />
