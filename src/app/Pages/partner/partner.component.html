@@ -1,0 +1,131 @@
+<app-navbar />
+<div class="container">
+    <div class="hero">
+        <h1>Devenez Partenaire</h1>
+        <p>Augmentez vos revenus avec les missions en free-lance dans votre pays</p>
+        <div class="buttons">
+            <button href="#form" class="signup-btn">S'incrire</button>
+            <button class="login-btn" routerLink="/login">Se Connecter</button>
+        </div>
+    </div>
+</div>
+<section class="missions">
+    <h1>Vos Missions</h1>
+    <div class="cards">
+        <div class="card">
+            <img src="assets/images/Suivre.webp" alt="mission-logo" width="80">
+            <div class="card-info">
+                <h4>Suivre</h4>
+                <p>une information, un dossier, un colis, un RDV, une opération, partout au Cameroun</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="assets/images/verifier.webp" alt="mission-logo" width="80">
+            <div class="card-info">
+                <h4>Vérifier</h4>
+                <p>une information, un dossier, un colis, un RDV, une opération, partout au Cameroun</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="assets/images/Chercher.webp" alt="mission-logo" width="80">
+            <div class="card-info">
+                <h4>Chercher</h4>
+                <p>une information, un dossier, un colis, un RDV, une opération, partout au Cameroun</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="assets/images/recuperer.webp" alt="mission-logo" width="80">
+            <div class="card-info">
+                <h4>Récupérer</h4>
+                <p>une information, un dossier, un colis, un RDV, une opération, partout au Cameroun</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="banner">
+  <h1>
+    Rejoignez notre communauté de partenaires <br/>et augmentez vos revenus par la réalisation des missions
+  </h1>
+  <ul>
+    <li>Travail libre en freelance</li>
+    <li>Missions sur l'étendue de territoire</li>
+    <li>Rémunération directe par mission</li>
+    <li>Choisissez votre région ou ville d'activité</li>
+    <li>Nous vous aidons à vous développer</li>
+  </ul>
+</section>
+<section class="form" id="form">
+  <div class="header">
+    <h1>Inscription</h1>
+    <p>Ces informations seront nécessaire à votre identification et localisation.</p>
+  </div>
+  <form [formGroup]="partnerForm" (ngSubmit)="onSubmit()">
+    <div class="info personal">
+      <h3>Informations Utitlisateur</h3>
+      <div class="boxes">
+        <div class="input-box">
+          <label for="firstName">Nom</label>
+          <input type="text" id="firstName" formControlName="firstName" placeholder="nom">
+          @if(firstName?.errors?.['required']) { <span class="err-msg">nom requis</span>}
+        </div>
+        <div class="input-box">
+          <label for="lastName">Prénom</label>
+          <input type="text" id="lastName" formControlName="lastName" placeholder="prénom">
+          @if(lastName?.errors?.['required']) { <span class="err-msg">prénom requis</span>}
+        </div>
+        <div class="input-box">
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email" placeholder="adresse mail">
+          @if(email?.errors?.['required']) { <span class="err-msg">adresse mail requise</span>}
+          @if(email?.errors?.['email']) { <span class="err-msg">adresse mail incorrecte</span>}
+        </div>
+        <div class="input-box">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" formControlName="password" placeholder="mot de passe">
+          @if(password?.errors?.['required']) { <span class="err-msg">mot de passe requis</span>}
+          @if(password?.errors?.['password']) { <span class="err-msg">mot de passe trop court</span>}
+        </div>
+        <div class="input-box">
+          <label for="phoneNumber">Téléphone</label>
+          <input type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="téléphone">
+          @if(phoneNumber?.errors?.['required']) { <span class="err-msg">nom requis</span>}
+        </div>
+      </div>
+    </div>
+    <div class="info activity">
+      <h3>Activités (facultatif)</h3>
+      <div class="input-box">
+        <label for="activities">Proposez nous vos autres activités</label>
+        <input
+          type="text"
+          id="activities"
+          formControlName="activities"
+        >
+      </div>
+    </div>
+    <div class="info location">
+      <h3>Adresse</h3>
+      <div class="boxes">
+        <div class="input-box">
+          <label for="street">Quartier</label>
+          <input type="text" id="street" formControlName="street" placeholder="quartier">
+          @if (street?.errors?.['required']) { <span class="err-msg">quartier requis</span>}
+        </div>
+        <div class="input-box">
+          <label for="twon">Ville de résidence</label>
+          <input type="text" id="twon" formControlName="twon" placeholder="ville">
+          @if (twon?.errors?.['required']) { <span class="err-msg">ville de résidence requise</span>}
+        </div>
+        <div class="input-box">
+          <label for="region">Région</label>
+          <input type="text" id="region" formControlName="region" placeholder="region">
+          @if (region?.errors?.['required']) { <span class="err-msg">nom requis</span>}
+        </div>
+      </div>
+    </div>
+    <div class="cta-btn">
+      <button type="submit" [disabled]="!this.partnerForm.valid">Rejoindre</button>
+    </div>
+  </form>
+</section>
+<app-footer />

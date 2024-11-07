@@ -14,8 +14,8 @@
                     </select>
                 </div>
                 <div class="input-box">
-                    <label for="type">Qualité du service</label>
-                    <select id="type">
+                    <label for="quality">Qualité du service</label>
+                    <select id="quality">
                         <option>-- Qualité --</option>
                         @for (q of qualitiesSelection; track q.name) {
                             <option>{{ q.name }}</option>
@@ -23,8 +23,8 @@
                     </select>
                 </div>
                 <div class="input-box">
-                    <label for="type">Objet du service</label>
-                    <select id="type">
+                    <label for="object">Objet du service</label>
+                    <select id="object">
                         <option>-- Objet --</option>
                         @for (o of objectSelection; track o.name) {
                             <option>{{ o.name }}</option>
@@ -37,24 +37,24 @@
             <h3>Localisation</h3>
             <div class="boxes">
                 <div class="input-box">
-                    <label for="">Nature juridique de la structure à voir</label>
-                    <input type="text" id="" placeholder="Administration publique, Ets public, Sté publique, Sté privée commerciale, Organisation civile, Association, Personne privée individuelle, Autre">
+                    <label for="nature-jurid">Nature juridique de la structure à voir</label>
+                    <input type="text" id="nature-jurid" placeholder="Administration publique, Ets public, Sté publique, Sté privée commerciale, Organisation civile, Association, Personne privée individuelle, Autre">
                 </div>
                 <div class="input-box">
-                    <label for="">Service à voir</label>
-                    <input type="text" id="" placeholder="nom de la structure, adresse, direction, service, porte, personne ou responsable à rencontrer, Téléphone">
+                    <label for="office">Service à voir</label>
+                    <input type="text" id="office" placeholder="nom de la structure, adresse, direction, service, porte, personne ou responsable à rencontrer, Téléphone">
                 </div>
                 <div class="input-box">
-                    <label for="">Localisation / adresse</label>
-                    <input type="text" id="" placeholder="région, département, ville, rue ou autre précision détaillée">
+                    <label for="location">Localisation / adresse</label>
+                    <input type="text" id="location" placeholder="région, département, ville, rue ou autre précision détaillée">
                 </div>
             </div>
         </div>
         <div class="task-box">
             <h3>Détails du service</h3>
             <div class="details-box">
-                <label for="">Description</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <label for="description">Description</label>
+                <textarea name="" id="description" cols="30" rows="10"></textarea>
             </div>
         </div>
         <div class="buttons">

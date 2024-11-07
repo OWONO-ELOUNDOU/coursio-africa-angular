@@ -15,4 +15,11 @@ export class TaskFormComponent {
     typeSelection = types;
     qualitiesSelection = qualities;
     objectSelection = objects;
+
+    constructor() {
+    }
+
+    selectedType(e: any) {
+      return e.target.value as string;
+    }
 }

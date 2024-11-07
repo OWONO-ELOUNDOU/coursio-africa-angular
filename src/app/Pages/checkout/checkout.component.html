@@ -1,21 +1,57 @@
-<p>checkout page works!</p>
 <div class="container">
   <div class="box">
-    <div class="task-info"></div>
+    <div class="task-info">
+      <div class="part">
+        <div class="info-box">
+          <h4>Type</h4>
+          <p>{{ task.type ? task.type : 'Rechercher' }}</p>
+        </div>
+        <div class="info-box">
+          <h4>Qualité</h4>
+          <p>{{ task.type ? task.type : 'Administrative' }}</p>
+        </div>
+        <div class="info-box">
+          <h4>Objet</h4>
+          <p>{{ task.type ? task.type : 'Dossier' }}</p>
+        </div>
+      </div>
+      <div class="part">
+        <div class="info-box">
+          <h4>Nature Juridique</h4>
+          <p>{{ task.type ? task.type : 'Nom de la structure' }}</p>
+        </div>
+        <div class="info-box">
+          <h4>Service à voir</h4>
+          <p>{{ task.type ? task.type : 'Bureau ou Direction' }}</p>
+        </div>
+        <div class="info-box">
+          <h4>Localisation</h4>
+          <p>{{ task.type ? task.type : 'Ministère' }}</p>
+        </div>
+      </div>
+      <div class="part">
+        <div class="info-box">
+          <h4>Description</h4>
+          <p>
+            {{ task.type ? task.type : 'L\'assistance digitale pour toutes vos démarches, formalités et courses professionnelles et personnelles en Afrique subsaharienne.' }}
+          </p>
+        </div>
+      </div>
+    </div>
     <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
       <div class="input-box">
         <label for="username">Nom complet</label>
-        <input type="text" id="username" formControlName="rN" placeholder="nom complet">
+        <input type="text" id="username" formControlName="rN" placeholder="nom complet" required>
       </div>
       <div class="input-box">
         <label for="email">Adresse Mail</label>
-        <input type="email" id="email" formControlName="rE" placeholder="adresse mail">
+        <input type="email" id="email" formControlName="rE" placeholder="adresse mail" required>
       </div>
       <div class="input-box">
         <label for="phoneNumber">Téléphone</label>
-        <input type="text" id="phoneNumber" formControlName="rT" placeholder="téléphone (OM / MOMO)">
+        <input type="text" id="phoneNumber" formControlName="rT" placeholder="téléphone (OM / MOMO)" required>
       </div>
-      <button type="submit">Valider Paiement | {{ price | currency : '2-1-1' : 'XAF' }}</button>
+      <button type="submit" [disabled]="!checkoutForm.valid" >Dohone Paiement | {{ price | currency : '2-1-1' : 'XAF' }}</button>
     </form>
   </div>
 </div>

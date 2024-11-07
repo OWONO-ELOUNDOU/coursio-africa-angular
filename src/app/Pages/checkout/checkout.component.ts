@@ -1,11 +1,14 @@
 import {Component, inject} from '@angular/core';
+import {CurrencyPipe} from '@angular/common';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import { environment } from '../../../environment/environment';
 
 // Import Service
 import {HotToastService} from '@ngneat/hot-toast';
 import {CheckoutService} from '../../services/checkout/checkout.service';
-import {CurrencyPipe} from '@angular/common';
+
+// Import Model
+import {Task} from '../../models/task.model';
 
 @Component({
   selector: 'app-checkout',
@@ -21,7 +24,7 @@ export class CheckoutComponent {
   private checkoutService = inject(CheckoutService);
 
   // Get task form from localStorage
-  taskForm = JSON.parse(localStorage.getItem('task') || '{}');
+  task: Task = JSON.parse(localStorage.getItem('task') || '{}');
 
   // Dohone configuration
   price = '3000';
