@@ -11,19 +11,18 @@ export class TaskService {
 
     constructor() { }
     
-    createTask(task: any, user: any) {
+    createTask(task: any, user: any, date: string) {
         return from(setDoc(doc(this.firestore, 'Tasks', `task-${user.uid}`), {
             userId: user.uid,
-            username: user.firstName + user.lastName,
             email: user.email,
-            phoneNumber: user.phoneNumber,
             type: task.type,
             quality: task.quality,
             object: task.object,
             natureJurid: task.natureJurid,
             office: task.office,
             location: task.location,
-            description: task.description
+            description: task.description,
+            create_at: date
         }))
     }
 }

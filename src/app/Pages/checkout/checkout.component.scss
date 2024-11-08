@@ -110,6 +110,7 @@ $light-blue-color: #eaf4ff;
       button:disabled {
         background-color: $light-blue-color;
         color: #777777;
+        cursor: not-allowed;
       }
     }
   }
